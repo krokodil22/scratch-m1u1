@@ -7,13 +7,10 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <img class="school-logo" src="logo.webp" alt="Логотип школы" draggable="false" />
-
     <main class="page">
-      <section class="intro">
-        <h1>Найди всех динозавров</h1>
-        <p class="hint">Передвигай предметы, находи динозавров и нажимай на них.</p>
-      </section>
+      <h1>Найди всех динозавров</h1>
+      <p class="hint">Передвигай предметы, находи динозавров и нажимай на них.</p>
+      <button id="reset-game" class="reset-button" type="button">Сбросить игру</button>
 
       <section class="game" aria-label="Игровое поле">
         <img class="bg" src="background.webp" alt="Фон" draggable="false" />
@@ -32,10 +29,7 @@
         <img class="prop draggable" data-prop="stone2" src="Stone2.webp" alt="Камень 2" draggable="false" style="left: 4.51874%; top: 73.939%; width: 22%;" />
         <img class="prop draggable" data-prop="palm" src="Palm.webp" alt="Пальма" draggable="false" style="left: 58.4946%; top: 27.6854%; width: 37%;" />
 
-        <div class="hud">
-          <div class="counter">Найдено: <span id="found-count">0</span> / <span id="total-count">0</span></div>
-          <button id="reset-game" class="reset-button" type="button" aria-label="Сбросить игру" title="Сбросить игру">↻</button>
-        </div>
+        <div class="counter">Найдено: <span id="found-count">0</span> / <span id="total-count">0</span></div>
         <div id="win-message" class="win-message" aria-live="polite"></div>
       </section>
     </main>
