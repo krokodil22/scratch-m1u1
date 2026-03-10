@@ -6,7 +6,7 @@ const totalCount = document.getElementById('total-count');
 const winMessage = document.getElementById('win-message');
 const resetButton = document.getElementById('reset-game');
 
-const codeWords = ['экран', 'мышка', 'кнопка', 'файл', 'робот', 'код', 'игра', 'цифра', 'диск', 'ссылка'];
+const codeWords = ['экран', 'мышка', 'кнопка', 'файл', 'робот', 'код', 'игра', 'цифра', 'диск',];
 
 let found = 0;
 totalCount.textContent = String(dinos.length);
