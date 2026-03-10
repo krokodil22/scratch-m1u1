@@ -10,7 +10,6 @@ let found = 0;
 totalCount.textContent = String(dinos.length);
 
 let topZ = 6;
-let dinosVisible = false;
 
 const initialPropPositions = Array.from(draggableProps, (item) => ({
   item,
@@ -21,15 +20,6 @@ const initialPropPositions = Array.from(draggableProps, (item) => ({
 
 const toPercent = (value, max) => `${(value / max) * 100}%`;
 
-const showDinos = () => {
-  if (dinosVisible) {
-    return;
-  }
-
-  dinos.forEach((dino) => dino.classList.remove('hidden-at-start'));
-  dinosVisible = true;
-};
-
 const resetGame = () => {
   found = 0;
   foundCount.textContent = '0';
@@ -37,7 +27,6 @@ const resetGame = () => {
 
   dinos.forEach((dino) => {
     dino.classList.remove('found');
-    dino.classList.add('hidden-at-start');
   });
 
   initialPropPositions.forEach(({ item, left, top, zIndex }) => {
@@ -48,7 +37,6 @@ const resetGame = () => {
   });
 
   topZ = 6;
-  dinosVisible = false;
 };
 
 resetButton.addEventListener('click', resetGame);
@@ -56,7 +44,6 @@ resetButton.addEventListener('click', resetGame);
 draggableProps.forEach((item) => {
   item.addEventListener('pointerdown', (event) => {
     event.preventDefault();
-    showDinos();
 
     const gameRect = game.getBoundingClientRect();
     const itemRect = item.getBoundingClientRect();
@@ -93,7 +80,7 @@ draggableProps.forEach((item) => {
 
 dinos.forEach((dino) => {
   dino.addEventListener('click', () => {
-    if (!dinosVisible || dino.classList.contains('found')) {
+    if (dino.classList.contains('found')) {
       return;
     }
 

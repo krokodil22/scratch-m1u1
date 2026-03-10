@@ -81,7 +81,6 @@ h1 {
   transform: scale(1.05);
 }
 
-.dino.hidden-at-start,
 .dino.found {
   opacity: 0;
   pointer-events: none;
