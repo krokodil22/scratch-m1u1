@@ -79,7 +79,7 @@ draggableProps.forEach((item) => {
 });
 
 dinos.forEach((dino) => {
-  dino.addEventListener('click', () => {
+  dino.addEventListener('dblclick', () => {
     if (dino.classList.contains('found')) {
       return;
     }
