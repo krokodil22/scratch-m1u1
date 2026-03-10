@@ -4,17 +4,59 @@ const dinos = document.querySelectorAll('.dino');
 const foundCount = document.getElementById('found-count');
 const totalCount = document.getElementById('total-count');
 const winMessage = document.getElementById('win-message');
+const resetButton = document.getElementById('reset-game');
 
 let found = 0;
 totalCount.textContent = String(dinos.length);
 
 let topZ = 6;
+let dinosVisible = false;
+
+const initialPropPositions = Array.from(draggableProps, (item) => ({
+  item,
+  left: item.style.left,
+  top: item.style.top,
+  zIndex: item.style.zIndex,
+}));
 
 const toPercent = (value, max) => `${(value / max) * 100}%`;
+
+const showDinos = () => {
+  if (dinosVisible) {
+    return;
+  }
+
+  dinos.forEach((dino) => dino.classList.remove('hidden-at-start'));
+  dinosVisible = true;
+};
+
+const resetGame = () => {
+  found = 0;
+  foundCount.textContent = '0';
+  winMessage.classList.remove('visible');
+
+  dinos.forEach((dino) => {
+    dino.classList.remove('found');
+    dino.classList.add('hidden-at-start');
+  });
+
+  initialPropPositions.forEach(({ item, left, top, zIndex }) => {
+    item.style.left = left;
+    item.style.top = top;
+    item.style.zIndex = zIndex;
+    item.classList.remove('dragging');
+  });
+
+  topZ = 6;
+  dinosVisible = false;
+};
+
+resetButton.addEventListener('click', resetGame);
 
 draggableProps.forEach((item) => {
   item.addEventListener('pointerdown', (event) => {
     event.preventDefault();
+    showDinos();
 
     const gameRect = game.getBoundingClientRect();
     const itemRect = item.getBoundingClientRect();
@@ -51,7 +93,7 @@ draggableProps.forEach((item) => {
 
 dinos.forEach((dino) => {
   dino.addEventListener('click', () => {
-    if (dino.classList.contains('found')) {
+    if (!dinosVisible || dino.classList.contains('found')) {
       return;
     }
 
