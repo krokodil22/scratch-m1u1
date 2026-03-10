@@ -127,3 +127,7 @@ h1 {
 .win-message.visible {
   opacity: 1;
 }
+
+.code-word {
+  color: #1b5bd6;
+}

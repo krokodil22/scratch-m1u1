@@ -6,6 +6,8 @@ const totalCount = document.getElementById('total-count');
 const winMessage = document.getElementById('win-message');
 const resetButton = document.getElementById('reset-game');
 
+const codeWords = ['экран', 'мышка', 'кнопка', 'файл', 'робот', 'код', 'игра', 'цифра', 'диск', 'ссылка'];
+
 let found = 0;
 totalCount.textContent = String(dinos.length);
 
@@ -89,6 +91,8 @@ dinos.forEach((dino) => {
     foundCount.textContent = String(found);
 
     if (found === dinos.length) {
+      const randomWord = codeWords[Math.floor(Math.random() * codeWords.length)];
+      winMessage.innerHTML = 'Отлично! Все друзья Гриши найдены!<br>Твое кодовое слово: <span class="code-word">' + randomWord + '</span>';
       winMessage.classList.add('visible');
     }
   });
