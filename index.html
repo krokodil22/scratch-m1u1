@@ -10,6 +10,7 @@
     <main class="page">
       <h1>Найди всех динозавров</h1>
       <p class="hint">Передвигай предметы, находи динозавров и нажимай на них.</p>
+      <button id="reset-game" class="reset-button" type="button">Сбросить игру</button>
 
       <section class="game" aria-label="Игровое поле">
         <img class="bg" src="background.webp" alt="Фон" draggable="false" />
@@ -21,12 +22,12 @@
         <img class="dino" data-dino="5" src="Dino5.webp" alt="Динозавр 5" draggable="false" style="left: 38%; top: 14.7%; width: 8.3%;" />
         <img class="dino" data-dino="6" src="Dino6.webp" alt="Динозавр 6" draggable="false" style="left: 57%; top: 80%; width: 7.3%;" />
 
-        <img class="prop draggable" data-prop="bash" src="Bash.webp" alt="Куст 1" draggable="false" style="left: 2%; top: 26%; width: 18%;" />
-        <img class="prop draggable" data-prop="bash2" src="Bash2.webp" alt="Куст 2" draggable="false" style="left: 41%; top: 69%; width: 15.5%;" />
-        <img class="prop draggable" data-prop="cloud" src="Cloud.webp" alt="Облако" draggable="false" style="left: 24%; top: 7%; width: 37%;" />
-        <img class="prop draggable" data-prop="stone" src="Stone.webp" alt="Камень 1" draggable="false" style="left: 30%; top: 50.5%; width: 23%;" />
-        <img class="prop draggable" data-prop="stone2" src="Stone2.webp" alt="Камень 2" draggable="false" style="left: 7%; top: 76%; width: 22%;" />
-        <img class="prop draggable" data-prop="palm" src="Palm.webp" alt="Пальма" draggable="false" style="left: 63%; top: 31%; width: 37%;" />
+        <img class="prop draggable" data-prop="bash" src="Bash.webp" alt="Куст 1" draggable="false" style="left: 5.31475%; top: 48.0608%; width: 18%;" />
+        <img class="prop draggable" data-prop="bash2" src="Bash2.webp" alt="Куст 2" draggable="false" style="left: 43.5967%; top: 40.8318%; width: 15.5%;" />
+        <img class="prop draggable" data-prop="cloud" src="Cloud.webp" alt="Облако" draggable="false" style="left: 24.6372%; top: 2.70993%; width: 37%;" />
+        <img class="prop draggable" data-prop="stone" src="Stone.webp" alt="Камень 1" draggable="false" style="left: 42.0876%; top: 75.588%; width: 23%;" />
+        <img class="prop draggable" data-prop="stone2" src="Stone2.webp" alt="Камень 2" draggable="false" style="left: 4.51874%; top: 73.939%; width: 22%;" />
+        <img class="prop draggable" data-prop="palm" src="Palm.webp" alt="Пальма" draggable="false" style="left: 58.4946%; top: 27.6854%; width: 37%;" />
 
         <div class="counter">Найдено: <span id="found-count">0</span> / <span id="total-count">0</span></div>
         <div id="win-message" class="win-message" aria-live="polite">🎉 Молодец! Ты нашёл всех динозавров! 🎉</div>

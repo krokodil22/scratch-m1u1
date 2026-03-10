@@ -4,13 +4,42 @@ const dinos = document.querySelectorAll('.dino');
 const foundCount = document.getElementById('found-count');
 const totalCount = document.getElementById('total-count');
 const winMessage = document.getElementById('win-message');
+const resetButton = document.getElementById('reset-game');
 
 let found = 0;
 totalCount.textContent = String(dinos.length);
 
 let topZ = 6;
 
+const initialPropPositions = Array.from(draggableProps, (item) => ({
+  item,
+  left: item.style.left,
+  top: item.style.top,
+  zIndex: item.style.zIndex,
+}));
+
 const toPercent = (value, max) => `${(value / max) * 100}%`;
+
+const resetGame = () => {
+  found = 0;
+  foundCount.textContent = '0';
+  winMessage.classList.remove('visible');
+
+  dinos.forEach((dino) => {
+    dino.classList.remove('found');
+  });
+
+  initialPropPositions.forEach(({ item, left, top, zIndex }) => {
+    item.style.left = left;
+    item.style.top = top;
+    item.style.zIndex = zIndex;
+    item.classList.remove('dragging');
+  });
+
+  topZ = 6;
+};
+
+resetButton.addEventListener('click', resetGame);
 
 draggableProps.forEach((item) => {
   item.addEventListener('pointerdown', (event) => {
