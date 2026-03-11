@@ -1,0 +1,10 @@
+<svg width="180" height="220" viewBox="0 0 180 220" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="mouseTitle mouseDesc">
+  <title id="mouseTitle">Компьютерная мышь с выделенной левой кнопкой</title>
+  <desc id="mouseDesc">Схематичное изображение компьютерной мыши, где левая кнопка выделена цветом.</desc>
+  <rect x="20" y="10" width="140" height="200" rx="70" fill="#F8FBFF" stroke="#7A29DF" stroke-width="6"/>
+  <line x1="90" y1="26" x2="90" y2="108" stroke="#7A29DF" stroke-width="4"/>
+  <path d="M26 90C26 54.6538 54.6538 26 90 26V108H26V90Z" fill="#59BAE0" fill-opacity="0.7"/>
+  <path d="M90 26C125.346 26 154 54.6538 154 90V108H90V26Z" fill="#ffffff" fill-opacity="0.9"/>
+  <rect x="74" y="122" width="32" height="62" rx="16" fill="#E8EAF8" stroke="#7A29DF" stroke-width="3"/>
+  <circle cx="40" cy="52" r="9" fill="#EF56B8"/>
+</svg>
