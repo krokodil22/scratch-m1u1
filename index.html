@@ -15,7 +15,8 @@
         <p class="hint">Передвигай предметы, находи динозавров и нажимай на них.</p>
       </section>
 
-      <section class="game" aria-label="Игровое поле">
+      <div class="game-layout">
+        <section class="game" aria-label="Игровое поле">
         <img class="bg" src="background.webp" alt="Фон" draggable="false" />
 
         <img class="dino" data-dino="1" src="Dino1.webp" alt="Динозавр 1" draggable="false" style="left: 47%; top: 58%; width: 8.5%;" />
@@ -37,7 +38,16 @@
           <button id="reset-game" class="reset-button" type="button" aria-label="Сбросить игру" title="Сбросить игру">↻</button>
         </div>
         <div id="win-message" class="win-message" aria-live="polite"></div>
-      </section>
+        </section>
+
+        <aside class="side-hint" aria-label="Подсказка по управлению">
+          <img src="mouse-hint.svg" alt="Компьютерная мышь с выделенной левой кнопкой" draggable="false" />
+          <ol>
+            <li>Чтобы передвигать предметы, зажми левую кнопку мыши.</li>
+            <li>Чтобы собрать динозавра, два раза кликни по нему.</li>
+          </ol>
+        </aside>
+      </div>
     </main>
 
     <script src="script.js"></script>
